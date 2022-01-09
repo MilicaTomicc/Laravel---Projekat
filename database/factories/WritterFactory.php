@@ -14,7 +14,11 @@ class WritterFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'first_name' => $this->faker->firstName,
+            'last_name' => $this->faker->lastName,
+            'born' => $this->faker->date,
+            'died' => $this->faker->optional()->date,
+            'birth_place' => $this->faker->address
         ];
     }
 }
