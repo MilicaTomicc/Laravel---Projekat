@@ -17,7 +17,7 @@ class UserController extends Controller
             ], 400);
         }
         $token = $user->createToken($user->email)->plainTextToken;
-        response()->json(["token" => $token], 200);
+        return response()->json(["token" => $token], 200);
     }
     public function logout(Request $req)
     {

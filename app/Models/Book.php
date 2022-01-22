@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use NunoMaduro\Collision\Contracts\Writer;
 
 class Book extends Model
 {
@@ -15,7 +14,7 @@ class Book extends Model
 
     public function writter()
     {
-        return $this->belongsTo(Writer::class);
+        return $this->belongsTo(Writter::class);
     }
     public function genre()
     {

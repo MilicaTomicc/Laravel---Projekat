@@ -29,7 +29,7 @@ class BookController extends Controller
         try {
             return response()->json(Book::create($request->all()), 200);
         } catch (Exception $ex) {
-            response()->json([
+            return response()->json([
                 "error" => $ex->getMessage()
             ], 500);
         }
@@ -59,7 +59,7 @@ class BookController extends Controller
             $book->update($request->all());
             return response()->json($book, 200);
         } catch (Exception $ex) {
-            response()->json([
+            return response()->json([
                 "error" => $ex->getMessage()
             ], 500);
         }
@@ -77,7 +77,7 @@ class BookController extends Controller
             $book->delete();
             return response()->noContent();
         } catch (Exception $ex) {
-            response()->json([
+            return response()->json([
                 "error" => $ex->getMessage()
             ], 500);
         }
